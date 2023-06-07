@@ -1,7 +1,7 @@
 package com.urlShort.url.controller;
 
-
 import com.urlShort.url.service.UrlShortenerService;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +23,7 @@ public class UrlShortenerController {
     }
 
     @PostMapping("/shorten")
-    public ResponseEntity<String> shortenUrl(@RequestBody String originalUrl) {
+    public ResponseEntity<String> shortenUrl(@RequestParam("url") String originalUrl) {
         String shortenedUrl = urlShortenerService.shortenUrl(originalUrl);
         return ResponseEntity.ok(shortenedUrl);
     }
@@ -49,7 +49,4 @@ public class UrlShortenerController {
         model.addAttribute("shortenedUrls", shortenedUrls);
         return "index";
     }
-
-
 }
-

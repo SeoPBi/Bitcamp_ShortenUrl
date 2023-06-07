@@ -19,11 +19,11 @@ if (shortenedUrls != null) {
     <h1>URL Shortener</h1>
 
     <form action="/api/shorten" method="post">
-        <label for="originalUrl">Original URL:</label>
-        <input type="text" id="originalUrl" name="originalUrl" required>
+        <label for="url">Original URL:</label>
+        <input type="text" id="url" name="url" required>
         <button type="submit">Shorten</button>
     </form>
-
+    
     <hr>
 
     <h2>Shortened URLs</h2>
